@@ -1,3 +1,5 @@
+/*GLOBAL*/
+
 *{
     margin: 0;   /*margim removida dos textos na pagina*/
     padding: 0;   /*prenchimento que esta em volta dos texto removido da pagina*/
@@ -7,5 +9,26 @@
 body {
     background: #f0f2f5;   /*cor de fundo*/
     font-family: 'Poppins', sans-serif;   /*fonte0*/
+}
+.container { 
+    width: 300px;   /*largura do container*/
+    margin: auto;
+}
 
+/*HEADER*/
+
+header{
+    background: #2d4a22; /*cor de fundo da caixa logo*/
+    padding: 2rem 0 10rem;   /*preenchimento na caixa ao redor da logo*/
+    text-align: center;   /*alinhando da logo na caixa*/
+}
+#logo{
+    color: #fff;
+    font-weight:100;
+}
+/*BALANCE*/
+/*FOOTER*/
+
+footer{
+    text-align: center; /*alinhamento rodapé*/
 }
