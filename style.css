@@ -1,0 +1,11 @@
+*{
+    margin: 0;   /*margim removida dos textos na pagina*/
+    padding: 0;   /*prenchimento que esta em volta dos texto removido da pagina*/
+    box-sizing: border-box;   /*texto vai acompanhar tamanho da borda da pagina*/
+}
+
+body {
+    background: #f0f2f5;   /*cor de fundo*/
+    font-family: 'Poppins', sans-serif;   /*fonte0*/
+
+}
