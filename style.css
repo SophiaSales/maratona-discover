@@ -1,5 +1,8 @@
 /*GLOBAL*/
 
+:root{
+    --darck-blue: #363f5f;
+}
 *{
     margin: 0;   /*margim removida dos textos na pagina*/
     padding: 0;   /*prenchimento que esta em volta dos texto removido da pagina*/
@@ -11,8 +14,15 @@ body {
     font-family: 'Poppins', sans-serif;   /*fonte0*/
 }
 .container { 
-    width: 300px;   /*largura do container*/
+    width: min(90vw, 800px);   /*largura do container vai deixar o texto da largura minima da pagina entre 90 e 800*/
     margin: auto;
+}
+/*TITULOS*/
+h2{
+   margin-top: 3.2rem;
+   margin-bottom: 0.8rem;   /*margim a baixo dos titulos*/
+   color: var(--darck-blue);
+   font-weight: normal;
 }
 
 /*HEADER*/
@@ -26,7 +36,28 @@ header{
     color: #fff;
     font-weight:100;
 }
+
 /*BALANCE*/
+
+#balance {
+    margin-top: -8rem;
+}
+#balance h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+/*CARDS*/
+
+.card{
+    background: #fff;
+    padding: 1.5rem 2rem;  /*prenchimento no texto dos cards*/
+    border-radius: 0,25rem;   /*borda noa caixa dos cards*/
+    margin-bottom: 2rem;
+    color: var(--darck-blue)
+}
+
+
 /*FOOTER*/
 
 footer{
