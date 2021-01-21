@@ -13,9 +13,33 @@ body {
     background: #f0f2f5;   /*cor de fundo*/
     font-family: 'Poppins', sans-serif;   /*fonte0*/
 }
+.sr-only {
+    position: absolute; /*ele coloca a frente da caixa*/
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;   /*serve para sumir*/
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 .container { 
     width: min(90vw, 800px);   /*largura do container vai deixar o texto da largura minima da pagina entre 90 e 800*/
     margin: auto;
+
+}
+/*LINKS*/
+a {
+    color: #49aa26;
+    text-decoration: none;
+}
+a:hover {
+    color: #3dd705;
+}
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
 }
 /*TITULOS*/
 h2{
@@ -59,6 +83,9 @@ header{
 .card h3 {
     font-weight: normal;   /*peso da fonte*/
     font-size: 1rem;   /*tamanho da fonte*/
+    display: flex;    /*ele daixa um elemento ao lado do outro*/
+    align-items: center;  
+    justify-content: space-between;
 }
 .card p { 
     font-size: 2rem;
