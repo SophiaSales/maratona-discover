@@ -8,6 +8,9 @@
     padding: 0;   /*prenchimento que esta em volta dos texto removido da pagina*/
     box-sizing: border-box;   /*texto vai acompanhar tamanho da borda da pagina*/
 }
+html {
+    font-size: 93.75%; /*equivalente a 15px*/
+ }
 
 body {
     background: #f0f2f5;   /*cor de fundo*/
@@ -47,7 +50,7 @@ a:hover {
     color: #3dd705;
 }
 .button.new {
-    display: inline-block;
+    display: inline-block;  /*avitiva a funsao margim e não usa a linha interira da pagina*/
     margin-bottom: .8rem;
 }
 /*HEADER*/
@@ -109,6 +112,13 @@ table thead tr th:first-child,
 table tbody tr td:first-child {
     border-radius: 0.25rem 0 0 0.25rem;
 }
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+
+
+}
+
 table thead th {
     background: #fff;
     font-weight: normal;
@@ -142,4 +152,15 @@ footer{
     padding: 4rem 0 2rem;
     color: var(--darck-blue);
     opacity: 0.6;
+}
+/*RESPONSIVE*/
+@media (min-width: 800px) {   /*quando o a largura da pagina for menor que 800px vai ser efetuado os comandos a baixo*/
+     html{
+         font-size: 87.5%;   /*equivalente a 14px*/
+     }
+    #balance {
+        display: grid;   /*determina os elementos para verdical e horizontal*/
+        grid-template-columns: repeat(3,1fr);   /*determina a largura das colunas*/
+        gap 2rem; /*determina espaço entre as colunas*/
+    }    
 }
