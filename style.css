@@ -11,16 +11,16 @@
 
 body {
     background: #f0f2f5;   /*cor de fundo*/
-    font-family: 'Poppins', sans-serif;   /*fonte0*/
+    font-family: 'Poppins', sans-serif;   /*fonte*/
 }
 .sr-only {
-    position: absolute; /*ele coloca a frente da caixa*/
+    position: absolute;   /*Posiçao absoluta se coloca a frente de outras caixas*/
     width: 1px;
     height: 1px;
     padding: 0;
     margin: -1px;
-    overflow: hidden;   /*serve para sumir*/
-    clip: rect(0, 0, 0, 0);
+    overflow: hidden;   /*serve para sumir h2*/
+    clip: rect(0, 0, 0, 0);   /*zerou a fuicinalidade*/
     white-space: nowrap;
     border-width: 0;
 }
@@ -29,18 +29,7 @@ body {
     margin: auto;
 
 }
-/*LINKS*/
-a {
-    color: #49aa26;
-    text-decoration: none;
-}
-a:hover {
-    color: #3dd705;
-}
-.button.new {
-    display: inline-block;
-    margin-bottom: .8rem;
-}
+
 /*TITULOS*/
 h2{
    margin-top: 3.2rem;
@@ -49,6 +38,18 @@ h2{
    font-weight: normal;
 }
 
+/*LINKS & BOTTONS*/
+a {
+    color: #49aa26;
+    text-decoration: none;  /*tira o underline dos links*/
+}
+a:hover {
+    color: #3dd705;
+}
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
 /*HEADER*/
 
 header{
@@ -84,8 +85,8 @@ header{
     font-weight: normal;   /*peso da fonte*/
     font-size: 1rem;   /*tamanho da fonte*/
     display: flex;    /*ele daixa um elemento ao lado do outro*/
-    align-items: center;  
-    justify-content: space-between;
+    align-items: center;   /*um elemento alinhado ao outro*/
+    justify-content: space-between;   /*ele coloca um espaço entre os elementos*/
 }
 .card p { 
     font-size: 2rem;
