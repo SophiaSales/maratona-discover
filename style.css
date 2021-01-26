@@ -10,7 +10,7 @@
 }
 html {
     font-size: 93.75%; /*equivalente a 15px*/
- }
+}
 
 body {
     background: #f0f2f5;   /*cor de fundo*/
@@ -35,10 +35,10 @@ body {
 
 /*TITULOS*/
 h2{
-   margin-top: 3.2rem;
-   margin-bottom: 0.8rem;   /*margim a baixo dos titulos*/
-   color: var(--darck-blue);
-   font-weight: normal;
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;   /*margim a baixo dos titulos*/
+    color: var(--darck-blue);
+    font-weight: normal;
 }
 
 /*LINKS & BOTTONS*/
@@ -103,10 +103,17 @@ header{
 
 /*TABLE*/
 
+#transaction{
+    display: block; /*encaixe no leiaute 100%*/
+    width: 100%;
+    overflow: auto;
+}
 #data-table {
+    
     width: 100%;   /*largura da tabela em 100%*/
     border-spacing: 0 0 .5rem;   /*definiçao da borda da tabela anulando as bordas vedicais */
     color: #969cb3;
+
 }
 table thead tr th:first-child,
 table tbody tr td:first-child {
@@ -154,13 +161,13 @@ footer{
     opacity: 0.6;
 }
 /*RESPONSIVE*/
-@media (min-width: 800px) {   /*quando o a largura da pagina for menor que 800px vai ser efetuado os comandos a baixo*/
-     html{
-         font-size: 87.5%;   /*equivalente a 14px*/
-     }
+@media (min-width: 800px) {   /*apartir de 800px aplica o que esta no media*/
+    html{
+        font-size: 87.5%;   /*equivalente a 14px*/
+    }
     #balance {
         display: grid;   /*determina os elementos para verdical e horizontal*/
         grid-template-columns: repeat(3,1fr);   /*determina a largura das colunas*/
-        gap 2rem; /*determina espaço entre as colunas*/
+        gap: 2rem; /*determina espaço entre as colunas*/
     }    
 }
