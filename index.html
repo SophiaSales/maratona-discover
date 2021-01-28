@@ -48,8 +48,8 @@
 
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" 
-            onclick="Modal.open()"             
+
+            <a href="#" onclick="Modal.open()"
             class="button new">+ Nova Trasação</a> <!--add uma hashtag e abre modal-->
 
             <table id="data-table">   <!--tabela-->
@@ -67,21 +67,27 @@
                         <td class="description">Luz</td>
                         <td class="expense">- R$ 500,00</td>
                         <td class="date">23/01/2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover Trasaçoes"></td>
+                        <td>
+                            <img src="./assets/minus.svg"alt="Remover Trasaçoes">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Criaçao website</td>
                         <td class="income">R$ 5.000,00</td>
                         <td class="date">23/01/2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover Trasaçoes"></td>
+                        <td>
+                            <img src="./assets/minus.svg"alt="Remover Trasaçoes">
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="description">Internet</td>
                         <td class="expense">-R$ 200,00</td>
                         <td class="date">23/01/2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover Trasaçoes"></td>
+                        <td>
+                            <img src="./assets/minus.svg"alt="Remover Trasaçoes">
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -89,7 +95,7 @@
         </section>
     </main>
 
-    <div class="modal-overlay ">   <!--caixa trasparente na pagina interira-->
+    <div class="modal-overlay">   <!--caixa trasparente na pagina interira-->
         <div class="modal">   <!--caixa baranca-->
             <div id="form">    <!--conteudo da caixa branca-->
                 <h2>Nova Transação</h2>
@@ -103,7 +109,7 @@
                             type="text" 
                             id="description" 
                             name="description"
-                            placeholder="Descrição">   <!--atributo vazio-->
+                            placeholder="Descrição"/>   <!--atributo vazio-->
                     </div>
 
                     <div class="input-group">
@@ -115,7 +121,7 @@
                             step="0.01" 
                             id="amount" 
                             name="amount" 
-                            placeholder="0,00">   <!--atributo vazio-->
+                            placeholder="0,00"/>   <!--atributo vazio-->
                     
                         <small class="help"> Use o sinal - (negativo) para despesas e , (virgula) para casas decimais</small>    <!--deixa o texto menor-->
 
@@ -145,17 +151,19 @@
     <footer>Made withi ❤️ by SophiaSales</footer>   <!--rodapé da pagina-->
 
     <script>  
-        const Modal= { 
+        const Modal = { 
             open(){   
                 document   //add add a class active ao modal
                 .querySelector('.modal-overlay')  //procura global no documento html modal...
-                .classList.add('active')   //add a classe active 
+                .classList
+                .add('active')   //add a classe active 
 
             },
             close() {
                 document   //remove class active do modal
-                 .querySelector('.modal-overlay')  //procura global no documento html modal..
-                .remove('active')   //remove a classe active 
+                     .querySelector('.modal-overlay')  //procura global no documento html modal..
+                    .classList
+                    .remove('active')   //remove a classe active 
 
             }
         }

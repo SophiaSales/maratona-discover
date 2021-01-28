@@ -52,10 +52,7 @@ a {
 a:hover {
     color: var(--light-green);
 }
-.button.new {
-    display: inline-block;  /*avitiva a funsao margim e não usa a linha interira da pagina*/
-    margin-bottom: .8rem;
-}
+
 button {
     width: 100%;
     height: 50px;
@@ -63,7 +60,7 @@ button {
     color: #fff;
     background: var(--green);
     padding: 0;
-    border-radius: 00.25rem;
+    border-radius: 0.25rem;
     cursor: pointer;
 
 }
@@ -205,6 +202,7 @@ td.expense {
 
     opacity: 0;   /*a caixa ocupa o espaço na tela mais nao aparece na pagina*/
     visibility: hidden;   /*esconde o espaço da caixa branca na pagina*/
+    z-index: 999;
 }
 
 .modal-overlay.active {
@@ -214,6 +212,8 @@ td.expense {
 .modal {
     background-color: #f0f2f5;
     padding: 2.4rem;
+    position: relative;
+    z-index: 1;
     
 }
 /*FORM*/
