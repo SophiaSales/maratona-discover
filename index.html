@@ -48,7 +48,9 @@
 
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" class="button new">+ Nova Trasação</a> <!--add uma hashtag-->
+            <a href="#" 
+            onclick="Modal.open()"             
+            class="button new">+ Nova Trasação</a> <!--add uma hashtag e abre modal-->
 
             <table id="data-table">   <!--tabela-->
                 <thead>   <!--cabesalio da tabela-->
@@ -87,7 +89,7 @@
         </section>
     </main>
 
-    <div class="modal-overlay active">   <!--caixa trasparente na pagina interira-->
+    <div class="modal-overlay ">   <!--caixa trasparente na pagina interira-->
         <div class="modal">   <!--caixa baranca-->
             <div id="form">    <!--conteudo da caixa branca-->
                 <h2>Nova Transação</h2>
@@ -130,7 +132,9 @@
                     </div>
 
                     <div class="input-group actions">     <!--botao-->
-                        <a href="#" class="button cancel">Cancelar</a>
+                        <a onclick="Modal.close()" 
+                        href="#" 
+                        class="button cancel">Cancelar</a>
                         <button>Salvar</button>    
                     </div>
                 </form>
@@ -139,6 +143,23 @@
     </div>
 
     <footer>Made withi ❤️ by SophiaSales</footer>   <!--rodapé da pagina-->
+
+    <script>  
+        const Modal= { 
+            open(){   
+                document   //add add a class active ao modal
+                .querySelector('.modal-overlay')  //procura global no documento html modal...
+                .classList.add('active')   //add a classe active 
+
+            },
+            close() {
+                document   //remove class active do modal
+                 .querySelector('.modal-overlay')  //procura global no documento html modal..
+                .remove('active')   //remove a classe active 
+
+            }
+        }
+    </script>
 
 </body>
 

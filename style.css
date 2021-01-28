@@ -71,10 +71,12 @@ button:hover {
     background: var(--light-green);
 }
 .button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
 
 }
 .button.cancel {
-    color:var (var(--red));
+    color:var(--red);
     border: 2px var(--red) solid;
     border-radius: 0.25rem;
     height: 50px;
@@ -85,6 +87,9 @@ button:hover {
 
     opacity: 0.6;
 
+}
+.button.cancel:hover {
+    opacity: 1;
 }
 /*HEADER*/
 
