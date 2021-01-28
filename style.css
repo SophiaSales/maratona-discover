@@ -152,6 +152,31 @@ td.expense {
     color: #e92929;
 }
 
+/*MODAL*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);   /*deixando o fundo pretro com uma trasparencia de 0.7*/
+    position: fixed;    /*posiçao fixa*/
+    top: 0;  /*posiçao 0, esta na pagina inteira*/
+    
+    display: flex;   
+    align-items: center;    /*configuraçao que deixou a caixa branca alinhada no centro da pagina */
+    justify-content: center;
+
+    opacity: 0;   /*a caixa ocupa o espaço na tela mais nao aparece na pagina*/
+    visibility: hidden;   /*esconde o espaço da caixa branca na pagina*/
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal {
+    background-color: #f0f2f5;
+    padding: 2.4rem;
+    
+}
 /*FOOTER*/
 
 footer{
