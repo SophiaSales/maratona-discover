@@ -48,16 +48,23 @@ const Transaction = {
 }
 
 const DOM = {
-    innerHTMLTransaction () {
+    addTransaction (trasaction, index){
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransaction(trasaction)
+
+        console.log(tr.innerHTML)
+    },
+    innerHTMLTransaction (trasaction) {
         const html = `
-        <tr>
-            <td class="description">Luz</td>
-            <td class="expense">- R$ 500,00</td>
-            <td class="date">23/01/2021</td>
-            <td>
-                <img src="./assets/minus.svg"alt="Remover Trasaçoes">
-            </td>
-        </tr>
+        <td class="description">${transaction.description}</td>
+        <td class="expense">${transaction.amount}</td>
+        <td class="date">${transaction.date}</td>
+        <td>
+            <img src="./assets/minus.svg"alt="Remover Trasaçoes">
+        </td>
         `
+        return html 
     }
 }
+
+DOM.addTransaction(transactions[0])
