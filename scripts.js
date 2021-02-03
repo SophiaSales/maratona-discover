@@ -13,6 +13,7 @@ const Modal = {
             .remove('active')   //remove a classe active 
 
     }
+}    
 const transactions = [ 
     {
         id: 1,
@@ -32,9 +33,16 @@ const transactions = [
         amount: -20000,
         date: '23/01/2021',
     },
+    {
+        id: 4,
+        description: 'App',
+        amount: 200000,
+        date: '23/01/2021',
+    },
+
 ]
 
-}
+
 const Transaction = {
     incomes () {
         //soma as entradas
@@ -48,16 +56,22 @@ const Transaction = {
 }
 
 const DOM = {
-    addTransaction (trasaction, index){
+    transactionsContainer: document.querySelector('#data-table tbody'),
+    addTransaction (transaction, index){
         const tr = document.createElement('tr')
-        tr.innerHTML = DOM.innerHTMLTransaction(trasaction)
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
 
-        console.log(tr.innerHTML)
+        DOM.transactionsContainer.appendChild(tr)
     },
-    innerHTMLTransaction (trasaction) {
+    innerHTMLTransaction (transaction) {
+        const CSSclass = transaction.amount > 0 ? "income":
+        "expense"
+
+        
+
         const html = `
         <td class="description">${transaction.description}</td>
-        <td class="expense">${transaction.amount}</td>
+        <td class="${CSSclass}">${transaction.amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
             <img src="./assets/minus.svg"alt="Remover Trasaçoes">
@@ -67,4 +81,13 @@ const DOM = {
     }
 }
 
-DOM.addTransaction(transactions[0])
+const Utils = {
+    formatCurrency(value){
+        const signal = Number(value) < 0 ? "-" : ""
+    }
+
+}
+
+transactions.forEach(function (transaction){
+    DOM.addTransaction(transaction)
+})
