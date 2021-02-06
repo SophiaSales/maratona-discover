@@ -48,7 +48,7 @@ const Transaction = {
 
     add(transaction){
         Transaction.all.push(transaction)
-        console.log(Transaction.all)
+        App.reload()
     },
     incomes () {
         let income = 0;
@@ -131,9 +131,26 @@ const Utils = {
     }
 
 }
+const App = {
+    init() {
+        
+        Transaction.all.forEach(function (transaction){
+            DOM.addTransaction(transaction)
+        })
+        DOM.updateBalance()
 
-transactions.forEach(function (transaction){
-    DOM.addTransaction(transaction)
+    },
+    reload () {
+        App.init()
+    },
+}
+
+App.init()
+
+
+Transaction.add({
+    id:39,
+    description : "Alo",
+    amount:200,
+    date:'23/01/2021'
 })
-
-DOM.updateBalance()
