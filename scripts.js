@@ -111,6 +111,10 @@ const DOM = {
         document
             .getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency (Transaction.total())
+    },
+
+    clearTransactions(){
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -141,6 +145,7 @@ const App = {
 
     },
     reload () {
+        DOM.clearTransactions()
         App.init()
     },
 }
