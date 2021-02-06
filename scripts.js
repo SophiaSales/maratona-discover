@@ -44,17 +44,35 @@ const transactions = [
 
 
 const Transaction = {
+    all: transactions,
+
+    add(transaction){
+        Transaction.all.push(transaction)
+        console.log(Transaction.all)
+    },
     incomes () {
+        let income = 0;
+        Transaction.all.forEach(transaction =>{
+            if(transaction.amount > 0){
+                income +=transaction.amount;
+            }
+        })
         //soma as entradas
-        return "Cheguei"
+        return income;
     },
     expenses () {
+        let expense = 0;
+        Transaction.all.forEach(transaction =>{
+            if(transaction.amount < 0){
+                expense +=transaction.amount;
+            }
+        })
         //somar as saidas
-        return "Aqui"
+        return expense;
     },
     total () {
         //é igual a entradas - saidas 
-        return "Discover"
+        return Transaction.incomes() + Transaction.expenses();
     }
 }
 
@@ -86,13 +104,13 @@ const DOM = {
     updateBalance() {
         document
             .getElementById('incomeDisplay')
-            .innerHTML = Transaction.incomes()
+            .innerHTML = Utils.formatCurrency(Transaction.incomes())
         document
             .getElementById('expenseDisplay')
-            .innerHTML = Transaction.expenses()
+            .innerHTML = Utils.formatCurrency (Transaction.expenses())
         document
             .getElementById('totalDisplay')
-            .innerHTML = Transaction.total()
+            .innerHTML = Utils.formatCurrency (Transaction.total())
     }
 }
 
@@ -105,7 +123,7 @@ const Utils = {
 
         value = Number(value) / 100
 
-        value = value.toLocalString("pt-Br",{
+        value = value.toLocaleString("pt-BR",{
             style: "currency",
             currency: "BRL"
         })
