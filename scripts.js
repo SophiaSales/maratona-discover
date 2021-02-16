@@ -40,7 +40,7 @@ const Transaction = {
         let income = 0;
         Transaction.all.forEach(transaction =>{
             if(transaction.amount > 0){
-                income +=transaction.amount;
+                income += transaction.amount;
             }
         })
         //soma as entradas
@@ -50,9 +50,9 @@ const Transaction = {
         let expense = 0;
         Transaction.all.forEach(transaction =>{
             if(transaction.amount < 0){
-                expense +=transaction.amount;
+                expense += transaction.amount;
             }
-        })
+        })  
         //somar as saidas
         return expense;
     },
@@ -64,6 +64,7 @@ const Transaction = {
 
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
+
     addTransaction (transaction, index){
         const tr = document.createElement('tr')
         tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
@@ -72,8 +73,7 @@ const DOM = {
         DOM.transactionsContainer.appendChild(tr)
     },
     innerHTMLTransaction (transaction, index) {
-        const CSSclass = transaction.amount > 0 ? "income":
-        "expense"
+        const CSSclass = transaction.amount > 0 ? "income": "expense"
 
         const amount = Utils.formatCurrency(transaction.amount)
 
@@ -82,7 +82,7 @@ const DOM = {
         <td class="${CSSclass}">${amount}</td>
         <td class="date">${transaction.date}</td>
         <td>
-            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg"alt="Remover Trasaçoes">
+            <img onclick="Transaction.remove(${index})" src="./assets/minus.svg"alt="Remover trasaçoes">
         </td>
         `
         return html 
@@ -108,9 +108,9 @@ const DOM = {
 
 const Utils = {
     formatAmount(value){
-        value = Number(value.replace (/\,\./g,"")) * 100
+        value = value * 100
 
-        return value
+        return Math.round(value)
     },
 
     formatDate(date){
@@ -130,7 +130,7 @@ const Utils = {
             currency: "BRL"
         })
         return signal + value
-    }
+    } 
 }
 
 const Form = {
@@ -179,27 +179,24 @@ const Form = {
     submit(event){
         event.preventDefault()
         
-    try{
-        Form.validateFields()
+        try{
+            Form.validateFields()
         
-        const transaction = Form.formatValues()
+            const transaction = Form.formatValues()
 
-        Transaction.add(transaction)
+            Transaction.add(transaction)
 
-        Form.clearFields()
+            Form.clearFields()
 
-        Modal.close()
+            Modal.close()
         
 
-    }catch(error){
-        alert(error.message)
+    }   catch(error){
+            alert(error.message)
     }
         
     }
 }
-
-
-
 const App = {
     init() {
         
